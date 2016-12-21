@@ -8,4 +8,4 @@ function sketchProc(processing) {
   draw = function() {  
     println("Hi");
   };
-}
+};
