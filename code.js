@@ -1,5 +1,4 @@
-function sketchProc(processing) {
-  setup = function() {
+var sketchProc=function(canvas){ with (canvas){  setup = function() {
     size(600,350);
     noLoop();
     background(0, 0, 0);
@@ -8,4 +7,4 @@ function sketchProc(processing) {
   draw = function() {  
     println("Hi");
   };
-};
+}};
