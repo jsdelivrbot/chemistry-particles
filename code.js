@@ -9,7 +9,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
     //[{state: , speed: , temperature:}]
     var particles = [];
     
-    var createParticle(state, speed, temperature, locationX, locationY) {
+    var createParticle = function(state, speed, temperature, locationX, locationY) {
         particles.push({state:speed, speed:speed, temperature:temperature});
     };
     
