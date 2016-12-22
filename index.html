@@ -5,21 +5,34 @@
         <title>Test Page</title>
     </head>
     <style>
+        .left {
+            display: block;
+            float: left;
+        }
         .center {
             display: block;
             margin: auto;
         }
+        .right {
+            display: block;
+            float: right;
+        }
     </style>
     <body>
     
-    <canvas id="canvas" class="center">
-    </canvas>
+    <canvas id="canvas_main" class="center"></canvas>
+    <canvas id="canvas_left" class="left"></canvas>
+    <canvas id="canvas_right" class="right"></canvas>
     
     <script src="https://rawgit.com/bdkopen/chemistry-particles/master/processing.js"></script>
     <script src="https://rawgit.com/bdkopen/chemistry-particles/eff608dbd5c93e941ee4e4102d2d674acfd4ed63/code.js"></script>
     <script type="application/javascript">
-    var canvas = document.getElementById("canvas");
+    var canvas = document.getElementById("canvas_main");
     var p = new Processing(canvas, sketchProc);
+    var canvas_left = document.getElementById("canvas_left");
+    var p = new Processing(canvas_left, sketchProc);
+    var canvas_right = document.getElementById("canvas_right");
+    var p = new Processing(canvas_right, sketchProc);
     </script>
 
     </body>
