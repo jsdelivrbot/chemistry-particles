@@ -1,9 +1,9 @@
 var sketchProc=function(processingInstance){ with (processingInstance){
-    setup = function() {
+    /*setup = function() {
         size(600,350);
         noLoop();
         background(0, 0, 0);
-    };
+    };*/
 
     draw = function() {  
         fill(0, 0, 255);
