@@ -23,5 +23,5 @@ var sketchProc=function(processingInstance){ with (processingInstance){
     mouseClicked = function() {
         particles.push(1, 2, 3);
         println(particles);
-    }
+    };
 }};
