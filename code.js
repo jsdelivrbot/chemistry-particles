@@ -1,6 +1,8 @@
 var sketchProc=function(processingInstance){ with (processingInstance){
     setup = function() {
-        size(screen.width/2,screen.height/2);
+        var windowWidth = window.innerWidth;
+        var windowHeight = window.innerHeight;
+        size(windowWidth/2, windowHeight/2);
     };
 
     draw = function() {  
