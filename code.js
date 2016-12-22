@@ -31,7 +31,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
     
     mouseClicked = function() {
         println("test");
-        createParticles(1,2,3,mouseX,mouseY);
+        createParticle(1,2,3,mouseX,mouseY);
         println(particles);
     };
 }};
