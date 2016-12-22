@@ -11,7 +11,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
     
     var createParticle(state, speed, temperature, locationX, locationY) {
         particles.push({state:speed, speed:speed, temperature:temperature});
-    }
+    };
     
     draw = function() {  
         background(255, 255, 255);
@@ -21,7 +21,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
     };
     
     mouseClicked = function() {
-        particles.push(1, 2, 3);
+        createParticles(1,2,3,mouseX,mouseY);
         println(particles);
     };
 }};
