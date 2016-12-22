@@ -17,7 +17,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         background(255, 255, 255);
         fill(0, 0, 255);
         text("I know where you live at night", 200, 200);
-        println("Hi");
+        //println("Hi");
     };
     
     mouseClicked = function() {
