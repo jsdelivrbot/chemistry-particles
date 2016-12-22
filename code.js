@@ -7,6 +7,8 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         background(0, 10, 0);
     };
     
+    var heat_source_temperature = 0; //Celcius, -25 upto 100.
+    
     //[{state: , speed: , temperature:}]
     var particles = [];
     
@@ -18,7 +20,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
             locationX: locationX_,
             LocationY: locationY_
         };
-        particles.push({object});
+        particles.push(object);
         println("Hi");
     };
     
