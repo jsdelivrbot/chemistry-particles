@@ -1,7 +1,7 @@
 var sketchProc=function(processingInstance){ with (processingInstance){
     setup = function() {
-        var windowWidth = window.innerWidth;
-        var windowHeight = window.innerHeight;
+        windowWidth = window.innerWidth;
+        windowHeight = window.innerHeight;
         size(windowWidth/2, windowHeight/2);
         frameRate(20);
         //background(0, 10, 0);
