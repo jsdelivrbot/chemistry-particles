@@ -17,13 +17,17 @@
             display: block;
             float: right;
         }
+        canvas {
+            display: flex;
+            justify-content: center;
+        }
     </style>
     <body>
         
     <div class="center">
-        <canvas id="canvas_left" class="left" width="150px" height="400px"></canvas>
-        <canvas id="canvas_main" class="center"></canvas>
-        <canvas id="canvas_right" class="right" width="150px" height="400px"></canvas>
+        <canvas id="canvas_left" width="150px" height="400px"></canvas>
+        <canvas id="canvas_main" ></canvas>
+        <canvas id="canvas_right" width="150px" height="400px"></canvas>
     </div>
         
     <script src="https://rawgit.com/bdkopen/chemistry-particles/master/processing.js"></script>
