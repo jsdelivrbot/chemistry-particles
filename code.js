@@ -4,13 +4,22 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         var windowHeight = window.innerHeight;
         size(windowWidth/2, windowHeight/2);
         frameRate(20);
+        background(0, 10, 0);
     };
     
     //[{state: , speed: , temperature:}]
     var particles = [];
     
-    var createParticle = function(state, speed, temperature, locationX, locationY) {
-        particles.push({state:speed, speed:speed, temperature:temperature});
+    var createParticle = function(state_, speed_, temperature_, locationX_, locationY_) {
+        var object = {
+            state: state_,
+            speed: speed_,
+            temperature: temperature_,
+            locationX: locationX_,
+            LocationY: locationY_
+        };
+        particles.push({object});
+        println("Hi");
     };
     
     draw = function() {  
@@ -21,6 +30,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
     };
     
     mouseClicked = function() {
+        println("test");
         createParticles(1,2,3,mouseX,mouseY);
         println(particles);
     };
