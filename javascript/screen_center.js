@@ -39,7 +39,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
                     //println("test2");
                     continue;
                 } else if(particles[a][3]+10 > particles[b][3] && particles[a][3]-10 < particles[b][3] && particles[a][4]+10 > particles[b][4] && particles[a][4]+10 < particles[b][4]) {
-                    var temp = particles[a][5]
+                    var temp = particles[a][5];
                     particles[a][5] = particles[b][5];
                     particles[b][5] = temp;
                     println("hi");
