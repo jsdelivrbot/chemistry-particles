@@ -26,14 +26,8 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         var array = [state, speed, temperature, locationX, locationY, rotation, material];
         if(state === 'solid') {
             for(var a = 0; a < particles.length; a++) {
-                if(array === particles[a]) {
-                    a++;    
-                } else {
-                    if(particles[a][0] === array[0] && particles[a][3]+200 > array[3] && particles[a][3]-200 < array[3] && particles[a][4]+200 > array[4] && particles[a][4]-200 < array[4]) {
-                        locationX += speed * sin(rotation);
-                        locationY += speed * cos(rotation);
-                    }
-                }
+                locationX += speed * sin(rotation);
+                locationY += speed * cos(rotation);
             }
         } else if(state === 'liquid') {
                   
