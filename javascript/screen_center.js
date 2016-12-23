@@ -22,12 +22,11 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         //println("test");
         popMatrix();
     };
-    var moveParticle = function(state, speed, temperature, locationX, locationY, rotation, material) {
-        var array = [state, speed, temperature, locationX, locationY, rotation, material];
+    var moveParticle = function() {
         if(state === 'solid') {
             for(var a = 0; a < particles.length; a++) {
-                particles[a][3] += speed * sin(rotation);
-                particles[a][4] += speed * cos(rotation);
+                particles[a][3] += particles[a][1] * sin(particles[a][5]);
+                particles[a][4] += particles[a][1] * cos(particles[a][5]);
             }
         } else if(state === 'liquid') {
                   
