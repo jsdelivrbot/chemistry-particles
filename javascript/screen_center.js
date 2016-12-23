@@ -3,32 +3,41 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         size(windowWidth/2, windowHeight/2);
         frameRate(20);
         //background(0, 10, 0);
+        strokeWeight(3);
+        angleMode(DEGREES);
     };
     
-    var createParticle = function(state, speed, temperature, locationX, locationY, directionX, directionY) {
+    var createParticle = function(state, speed, temperature, locationX, locationY, directionX, directionY, material) {
         particles.push([state, speed, temperature, locationX, locationY, directionX, directionY]);
         println("Hi");
     };
     
-    var drawParticle = function(state, speed, temperature, locationX, locationY) {
+    var drawParticle = function(state, speed, temperature, locationX, locationY, directionX, directionY, material) {
         fill(0, 0, 0);
-        ellipse(locationX, locationY, 10, 10);
+        pushMatrix();
+        translate(locationX, locationY);
+        ellipse(0, 0, 10, 10);
+        line(0, 0, 3*speed, 3*speed);
+        line(3*speed, 3*speed, 3*speed-5, 3*speed-2.5);
+        line(3*speed, 3*speed, 3*speed+5, 3*speed+2.5);
+        println("test");
+        popMatrix();
     };
     
     
     draw = function() {  
         background(255, 255, 255);
         fill(0, 0, 255);
-        text("I know where you live at night", 200, 200);
+        //text("I know where you live at night", 200, 200);
         //println("Hi");
         for(var a = 0; a < particles.length; a++) {
-            drawParticle(particles[a][0], particles[a][1], particles[a][2], particles[a][3], particles[a][4], particles[a][5], particles[a][6]);
+            drawParticle(particles[a][0], particles[a][1], particles[a][2], particles[a][3], particles[a][4], particles[a][5], particles[a][6], particles[a][7]);
         }
     };
     
     mouseClicked = function() {
         println("test");
-        createParticle(1, 2, 3, mouseX, mouseY, random(1, -1), random(1, -1));
+        createParticle(1, 2, 3, mouseX, mouseY, random(1, -1), random(1, -1), "water");
         println(particles);
     };
 }};
