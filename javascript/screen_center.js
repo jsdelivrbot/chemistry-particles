@@ -1,16 +1,9 @@
 var sketchProc=function(processingInstance){ with (processingInstance){
     setup = function() {
-        windowWidth = window.innerWidth;
-        windowHeight = window.innerHeight;
         size(windowWidth/2, windowHeight/2);
         frameRate(20);
         //background(0, 10, 0);
     };
-    
-    var heat_source_temperature = 0; //Celcius, -25 upto 100.
-    
-    //[{state: , speed: , temperature:}]
-    var particles = [];
     
     var createParticle = function(state, speed, temperature, locationX, locationY, directionX, directionY) {
         particles.push([state, speed, temperature, locationX, locationY, directionX, directionY]);
