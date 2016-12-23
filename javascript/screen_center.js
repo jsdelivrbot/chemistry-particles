@@ -68,5 +68,9 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         println("test");
         createParticle('solid', 3, 3, mouseX, mouseY, random(0, 360), "water");
         println(particles);
+        noLoop();
+    };
+    var mouseReleased = function() {
+        loop();    
     };
 }};
