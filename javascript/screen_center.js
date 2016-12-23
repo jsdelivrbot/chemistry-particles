@@ -16,9 +16,9 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         pushMatrix();
         translate(locationX, locationY);
         ellipse(0, 0, 5, 5);
-        line(0, 0, 3*speed, 3*speed);
-        line(2*speed, 2*speed, 2*speed-5, 2*speed-2.5);
-        line(2*speed, 2*speed, 2*speed-5, 2*speed+2.5);
+        line(0, 0, 3*speed, 0);
+        line(3*speed, 0, 3*speed-7.5, 3*speed-5);
+        line(3*speed, 0, 3*speed-7.5, 3*speed+5);
         println("test");
         popMatrix();
     };
@@ -36,7 +36,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
     
     mouseClicked = function() {
         println("test");
-        createParticle(1, 2, 3, mouseX, mouseY, random(1, -1), random(1, -1), "water");
+        createParticle(1, 3, 3, mouseX, mouseY, random(1, -1), random(1, -1), "water");
         println(particles);
     };
 }};
