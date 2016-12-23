@@ -44,8 +44,8 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         //println("Hi");
         for(var a = 0; a < particles.length; a++) {
             drawParticle(particles[a][0], particles[a][1], particles[a][2], particles[a][3], particles[a][4], particles[a][5], particles[a][6]);
-            moveParticle(particles[a][0], particles[a][1], particles[a][2], particles[a][3], particles[a][4], particles[a][5], particles[a][6]);
         }
+        moveParticle();
     };
     
     mouseClicked = function() {
