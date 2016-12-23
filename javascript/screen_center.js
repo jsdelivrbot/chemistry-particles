@@ -22,6 +22,24 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         //println("test");
         popMatrix();
     };
+    var moveParticle = function(state, speed, temperature, locationX, locationY, rotation, material) {
+        var array = [state, speed, temperature, locationX, locationY, rotation, material];
+        if(state === 'solid') {
+            for(var a = 0; a < particles.length; a++) {
+                if(array === particles[a]) {
+                    a++;    
+                } else {
+                    if(particles[a][0] === aray[0] && particles[a][3]+200 > array[3] && particles[a][3]-200 < array[3] && particles[a][4]+200 > array[4] && particles[a][4]-200 < array[4]) {
+                        println("test");
+                    }
+                }
+            }
+        } else if(state === 'liquid') {
+                  
+        } else if(state === 'gas') {
+                  
+        }
+    };
     
     
     draw = function() {  
@@ -30,13 +48,14 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         //text("I know where you live at night", 200, 200);
         //println("Hi");
         for(var a = 0; a < particles.length; a++) {
-            drawParticle(particles[a][0], particles[a][1], particles[a][2], particles[a][3], particles[a][4], particles[a][5], particles[a][6], particles[a][7]);
+            drawParticle(particles[a][0], particles[a][1], particles[a][2], particles[a][3], particles[a][4], particles[a][5], particles[a][6]);
+            moveParticle(particles[a][0], particles[a][1], particles[a][2], particles[a][3], particles[a][4], particles[a][5], particles[a][6]);
         }
     };
     
     mouseClicked = function() {
         println("test");
-        createParticle(1, 3, 3, mouseX, mouseY, random(0, 360), "water");
+        createParticle('solid', 3, 3, mouseX, mouseY, random(0, 360), "water");
         println(particles);
     };
 }};
