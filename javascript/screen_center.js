@@ -3,7 +3,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         size(windowWidth/2, windowHeight/2);
         frameRate(20);
         //background(0, 10, 0);
-        strokeWeight(3);
+        strokeWeight(2);
     };
     
     var createParticle = function(state, speed, temperature, locationX, locationY, directionX, directionY, material) {
@@ -15,10 +15,10 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         fill(0, 0, 0);
         pushMatrix();
         translate(locationX, locationY);
-        ellipse(0, 0, 5, 5);
+        ellipse(0, 0, 2.5, 2.5);
         line(0, 0, 3*speed, 0);
-        line(3*speed, 0, 3*speed-7.5, 3*speed-5);
-        line(3*speed, 0, 3*speed-7.5, 3*speed+5);
+        line(3*speed, 0, 3*speed-5, -4);
+        line(3*speed, 0, 3*speed-5, +4);
         println("test");
         popMatrix();
     };
