@@ -35,13 +35,6 @@ var sketchProc=function(processingInstance){ with (processingInstance){
             }
             
             for(var b = 0; b < particles.length; b++) {
-                var dx = particles[a][3] - particles[b][3];
-                var dy = particles[a][4] - particles[b][4];
-                var distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < 5 + 5) {
-                    println("Hi");
-                }
-                
                 if(a === b) {
                     //println("test2");
                     continue;
