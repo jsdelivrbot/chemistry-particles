@@ -26,8 +26,8 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         
         for(var a = 0; a < particles.length; a++) {
             if(particles[a][0] === 'solid') {
-                particles[a][3] += particles[a][1] * sin(particles[a][5]);
-                particles[a][4] += particles[a][1] * cos(particles[a][5]);
+                particles[a][3] += particles[a][1] * cos(radians(particles[a][5]));
+                particles[a][4] += particles[a][1] * sin(radians(particles[a][5]));
             } else if(state === 'liquid') {
 
             } else if(state === 'gas') {
