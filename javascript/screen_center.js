@@ -4,7 +4,6 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         frameRate(20);
         //background(0, 10, 0);
         strokeWeight(3);
-        angleMode(DEGREES);
     };
     
     var createParticle = function(state, speed, temperature, locationX, locationY, directionX, directionY, material) {
