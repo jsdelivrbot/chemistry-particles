@@ -4,6 +4,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         frameRate(20);
         //background(0, 10, 0);
         strokeWeight(2);
+        randomSeed(random(-1000000000, 1000000000));
     };
     
     var createParticle = function(state, speed, temperature, locationX, locationY, rotation, material) {
