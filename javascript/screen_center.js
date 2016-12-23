@@ -72,5 +72,6 @@ var sketchProc=function(processingInstance){ with (processingInstance){
     };
     var mouseReleased = function() {
         noLoop();    
+        drawParticle();
     };
 }};
