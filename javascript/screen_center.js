@@ -29,7 +29,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
                 if(array === particles[a]) {
                     a++;    
                 } else {
-                    if(particles[a][0] === aray[0] && particles[a][3]+200 > array[3] && particles[a][3]-200 < array[3] && particles[a][4]+200 > array[4] && particles[a][4]-200 < array[4]) {
+                    if(particles[a][0] === array[0] && particles[a][3]+200 > array[3] && particles[a][3]-200 < array[3] && particles[a][4]+200 > array[4] && particles[a][4]-200 < array[4]) {
                         println("test");
                     }
                 }
