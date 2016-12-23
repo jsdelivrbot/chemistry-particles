@@ -15,6 +15,17 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         fill(0, 0, 0);
         pushMatrix();
         translate(locationX, locationY);
+        if(directionX => 0 && directionY => 0) {
+            if(directionX > directionY) {
+                angle(degree(directionX-directionY));    
+            } else if(directionX > directionY) { {
+                angle(degree(directionY-directionX));    
+            } else {
+                angle(degree(45));    
+            }
+        } else {
+            angle(degree(0));
+        }
         ellipse(0, 0, 2.5, 2.5);
         line(0, 0, 3*speed, 0);
         line(3*speed, 0, 3*speed-5, -4);
