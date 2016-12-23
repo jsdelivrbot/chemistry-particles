@@ -26,8 +26,8 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         var array = [state, speed, temperature, locationX, locationY, rotation, material];
         if(state === 'solid') {
             for(var a = 0; a < particles.length; a++) {
-                locationX += speed * sin(rotation);
-                locationY += speed * cos(rotation);
+                particles[a][3] += speed * sin(rotation);
+                particles[a][4] += speed * cos(rotation);
             }
         } else if(state === 'liquid') {
                   
