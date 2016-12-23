@@ -17,14 +17,14 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         translate(locationX, locationY);
         if(directionX > 0 && directionY > 0) {
             if(directionX > directionY) {
-                rotate(degree(directionX-directionY));    
+                rotate(degrees(directionX-directionY));    
             } else if(directionX > directionY) {
-                rotate(degree(directionY-directionX));    
+                rotate(degrees(directionY-directionX));    
             } else {
-                rotate(degree(45));    
+                rotate(degrees(45));    
             }
         } else {
-            rotate(degree(0));
+            rotate(degrees(0));
         }
         ellipse(0, 0, 2.5, 2.5);
         line(0, 0, 3*speed, 0);
