@@ -15,10 +15,10 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         fill(0, 0, 0);
         pushMatrix();
         translate(locationX, locationY);
-        ellipse(0, 0, 10, 10);
+        ellipse(0, 0, 5, 5);
         line(0, 0, 3*speed, 3*speed);
-        line(3*speed, 3*speed, 3*speed-5, 3*speed-2.5);
-        line(3*speed, 3*speed, 3*speed+5, 3*speed+2.5);
+        line(2*speed, 2*speed, 2*speed-5, 2*speed-2.5);
+        line(2*speed, 2*speed, 2*speed-5, 2*speed+2.5);
         println("test");
         popMatrix();
     };
