@@ -30,7 +30,8 @@ var sketchProc=function(processingInstance){ with (processingInstance){
                     a++;    
                 } else {
                     if(particles[a][0] === array[0] && particles[a][3]+200 > array[3] && particles[a][3]-200 < array[3] && particles[a][4]+200 > array[4] && particles[a][4]-200 < array[4]) {
-                        println("test");
+                        locationX += speed * sin(rotation);
+                        locationY += speed * cos(rotation);
                     }
                 }
             }
