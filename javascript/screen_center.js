@@ -41,7 +41,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
                     var temp = particles[a][5]
                     particles[a][5] = particles[b][5];
                     particles[b][5] = temp;
-                    
+                    println("hi");
                 }
             }
         }
