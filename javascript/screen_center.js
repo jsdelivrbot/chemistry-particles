@@ -6,31 +6,20 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         strokeWeight(2);
     };
     
-    var createParticle = function(state, speed, temperature, locationX, locationY, directionX, directionY, material) {
-        particles.push([state, speed, temperature, locationX, locationY, directionX, directionY]);
-        println("Hi");
+    var createParticle = function(state, speed, temperature, locationX, locationY, rotation, material) {
+        particles.push([state, speed, temperature, locationX, locationY, rotation, material]);
     };
     
-    var drawParticle = function(state, speed, temperature, locationX, locationY, directionX, directionY, material) {
+    var drawParticle = function(state, speed, temperature, locationX, locationY, rotation, material) {
         fill(0, 0, 0);
         pushMatrix();
         translate(locationX, locationY);
-        if(directionX > 0 && directionY > 0) {
-            if(directionX > directionY) {
-                rotate(degrees(directionX-directionY));    
-            } else if(directionX > directionY) {
-                rotate(degrees(directionY-directionX));    
-            } else {
-                rotate(degrees(45));    
-            }
-        } else {
-            rotate(degrees(0));
-        }
+        rotate(radians(rotation));
         ellipse(0, 0, 2.5, 2.5);
         line(0, 0, 3*speed, 0);
         line(3*speed, 0, 3*speed-5, -4);
         line(3*speed, 0, 3*speed-5, +4);
-        println("test");
+        //println("test");
         popMatrix();
     };
     
@@ -47,7 +36,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
     
     mouseClicked = function() {
         println("test");
-        createParticle(1, 3, 3, mouseX, mouseY, random(1, -1), random(1, -1), "water");
+        createParticle(1, 3, 3, mouseX, mouseY, random(0, 360), "water");
         println(particles);
     };
 }};
