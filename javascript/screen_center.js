@@ -15,7 +15,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         fill(0, 0, 0);
         pushMatrix();
         translate(locationX, locationY);
-        if(directionX => 0 && directionY => 0) {
+        if(directionX == 0 && directionY == 0) {
             if(directionX > directionY) {
                 angle(degree(directionX-directionY));    
             } else if(directionX > directionY) { {
