@@ -42,11 +42,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
                     particles[b][5] = temp;
                     println("hi");
                 } else {
-                    println(a !== b + "a !== b");  
- -                  println(particles[a][3]+100 > particles[b][3] + "particles[a][3]+100 > particles[b][3]");
- -                  println(particles[a][3]-100 < particles[b][3] + "particles[a][3]-100 < particles[b][3]");
- -                  println(particles[a][4]+100 > particles[b][4] + "particles[a][4]+100 > particles[b][4]");
- -                  println(particles[a][4]-100 < particles[b][4] + "particles[a][4]-100 < particles[b][4]");
+                    println(a +" " + b);    
                 }
             }
         }
@@ -68,10 +64,6 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         println("test");
         createParticle('solid', 3, 3, mouseX, mouseY, random(0, 360), "water");
         println(particles);
-        loop();
     };
-    var mouseReleased = function() {
-        noLoop();    
-        drawParticle();
-    };
+
 }};
