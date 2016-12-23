@@ -36,8 +36,8 @@ var sketchProc=function(processingInstance){ with (processingInstance){
             
             for(var b = 0; b < particles.length; b++) {
                 if(particles[a] === particles[b]) {
-                    continue;
                     println("test2");
+                    continue;
                 } else if(particles[a][3]+10 > particles[b][3] && particles[a][3]-10 < particles[b][3] && particles[a][4]+10 > particles[b][4] && particles[a][4]+10 < particles[b][4]) {
                     var temp = particles[a][5]
                     particles[a][5] = particles[b][5];
