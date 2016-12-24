@@ -26,7 +26,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
     var moveParticle = function() {
         
         for(var a = 0; a < particles.length; a++) {
-            if(particles[a][3] < 0 || particles[a][3] > windowWidth || particles[a][4] < 0 || particles[a][4] > windowHeight) {
+            if(particles[a][3] < 0 || particles[a][3] > windowWidth/2 || particles[a][4] < 0 || particles[a][4] > windowHeight/2) {
                particles[a][5] *= -1;
             }
             
