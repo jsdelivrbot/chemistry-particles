@@ -37,9 +37,8 @@ var sketchProc=function(processingInstance){ with (processingInstance){
             
             for(var b = 0; b < particles.length; b++) {
                 if(a !== b && particles[a][3] > particles[b][3]-10 && particles[a][3] < particles[b][3]+10 && particles[a][4] > particles[b][4]-10 && particles[a][4] < particles[b][4]+10) {
-                    var temp = particles[a][5];
-                    particles[a][5] = particles[b][5];
-                    particles[b][5] = temp;
+                    particles[a][5] *= -1;
+                    particles[b][5] *= -1;
                     println("hi");
                     particles[a][3] += particles[a][1] * cos(radians(particles[a][5]))*2;
                     particles[a][4] += particles[a][1] * sin(radians(particles[a][5]))*2;
