@@ -41,6 +41,8 @@ var sketchProc=function(processingInstance){ with (processingInstance){
                     particles[a][5] = particles[b][5];
                     particles[b][5] = temp;
                     println("hi");
+                    particles[a][3] += particles[a][1] * cos(radians(particles[a][5]))*2;
+                    particles[a][4] += particles[a][1] * sin(radians(particles[a][5]))*2;
                 }
             }
         }
