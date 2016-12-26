@@ -30,6 +30,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
                particles[a][5] *= -1;
             } else if(particles[a][3] < 0 || particles[a][3] > windowWidth/2) {
                particles[a][5] = 360 - particles[a][5];
+               println("Y-Axis Collision");
             }
             
             if(particles[a][0] === 'solid') {
