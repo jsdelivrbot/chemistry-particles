@@ -38,7 +38,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
                 }
             //x-axis collision test
             } else if(particles[a][3] < 0 || particles[a][3] > windowWidth/2) {
-                println("Y-Axis Collision" + (180 - particles[a][5]));
+                println("Y-Axis Collision " + (180 - particles[a][5]));
                 particles[a][5] = 180 - particles[a][5];
                 
                 //if the particle is stuck in the wall
@@ -53,20 +53,33 @@ var sketchProc=function(processingInstance){ with (processingInstance){
                 //particles[a][3] += particles[a][1] * cos(radians(particles[a][5]));
                 //particles[a][4] += particles[a][1] * sin(radians(particles[a][5]));
             } else if(state === 'liquid') {
-
+                //if liquid particles collide.
+                for(var b = 0; b < particles.length; b++) {
+                    if(a !== b && particles[a][3] > particles[b][3]-5 && particles[a][3] < particles[b][3]+5 && particles[a][4] > particles[b][4]-5 && particles[a][4] < particles[b][4]+5) {
+                        particles[a][5] *= -1;
+                        particles[b][5] *= -1;
+                    }
+                }
+                
             } else if(state === 'gas') {
-
-            }
-            
-            for(var b = 0; b < particles.length; b++) {
-                if(a !== b && particles[a][3] > particles[b][3]-5 && particles[a][3] < particles[b][3]+5 && particles[a][4] > particles[b][4]-5 && particles[a][4] < particles[b][4]+5) {
-                    particles[a][5] *= -1;
-                    particles[b][5] *= -1;
-                    println("hi");
-                    
+                //if gas particles collide. Larger range then liquid.
+                for(var b = 0; b < particles.length; b++) {
+                    if(a !== b && particles[a][3] > particles[b][3]-20 && particles[a][3] < particles[b][3]+20 && particles[a][4] > particles[b][4]-20 && particles[a][4] < particles[b][4]+20) {
+                        particles[a][5] *= -1;
+                        particles[b][5] *= -1;
+                    }
                 }
             }
             
+            //detect if particles collide with each other.
+            /**for(var b = 0; b < particles.length; b++) {
+                if(a !== b && particles[a][3] > particles[b][3]-5 && particles[a][3] < particles[b][3]+5 && particles[a][4] > particles[b][4]-5 && particles[a][4] < particles[b][4]+5) {
+                    particles[a][5] *= -1;
+                    particles[b][5] *= -1;
+                }
+            }**/
+            
+            //change x and y axis of particle. All particles move at the same rate.
             particles[a][3] += particles[a][1] * cos(radians(particles[a][5]));
             particles[a][4] += particles[a][1] * sin(radians(particles[a][5]));
         }
@@ -86,7 +99,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
     
     mouseClicked = function() {
         println("test");
-        createParticle('solid', 3, 3, mouseX, mouseY, random(0, 360), "water");
+        createParticle('gas', 3, 3, mouseX, mouseY, random(0, 360), "water");
         println(particles);
     };
 
