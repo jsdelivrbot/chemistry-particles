@@ -23,20 +23,30 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         //println("test");
         popMatrix();
     };
-    var moveParticle = function() {
-        
+    
+    var moveParticle = function() {    
         for(var a = 0; a < particles.length; a++) {
+            //y-axis collision test.
             if(particles[a][4] < 0 || particles[a][4] > windowHeight/2) {
                 particles[a][5] *= -1;
                 
+                //if the particle is stuck in the wall
                 if(particles[a][4] < -2) {
                    particles[a][4] = 0;
                 } else if(particles[a][4] > (windowHeight/2)+2) {
                    particles[a][4] = windowHeight/2;   
                 }
+            //x-axis collision test
             } else if(particles[a][3] < 0 || particles[a][3] > windowWidth/2) {
                 println("Y-Axis Collision" + (180 - particles[a][5]));
                 particles[a][5] = 180 - particles[a][5];
+                
+                //if the particle is stuck in the wall
+                if(particles[a][3] < -2) {
+                   particles[a][3] = 0;
+                } else if(particles[a][3] > (windowWidth/2)+2) {
+                   particles[a][3] = windowWidth/2;   
+                }
             }
             
             if(particles[a][0] === 'solid') {
