@@ -6,22 +6,12 @@
     </head>
     <style>
         .wrapper {
-            /*display: flex;
-            justify-content: center;*/
-            margin: auto;
+            display: -webkit-flex;
+            display: flex;
         }    
         
-        .left {
-            /*flex-shrink: 0;*/
-            float: left;
-        }
-        .center {
-            /*flex-shrink: 0;*/
-            float: left;
-        }
-        .right {
-            /*flex-shrink: 0;*/
-            float: left;
+        .flex-item {
+            margin: auto;
         }
         /*canvas {
             display: flex;
@@ -31,9 +21,9 @@
     <body>
         
     <div id="wrapper">
-        <canvas id="canvas_left" class="left" width="150px" height="400px"></canvas>
-        <canvas id="canvas_main" class="center" ></canvas>
-        <canvas id="canvas_right" class="right" width="150px" height="400px"></canvas>
+        <canvas id="canvas_left" class="flex-item" width="150px" height="400px"></canvas>
+        <canvas id="canvas_main" class="flex-item" ></canvas>
+        <canvas id="canvas_right" class="flex-item" width="150px" height="400px"></canvas>
     </div>
 
     <script src="https://rawgit.com/bdkopen/chemistry-particles/master/processing.js"></script>
