@@ -27,10 +27,16 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         
         for(var a = 0; a < particles.length; a++) {
             if(particles[a][4] < 0 || particles[a][4] > windowHeight/2) {
-               particles[a][5] *= -1;
+                particles[a][5] *= -1;
+                
+                if(particles[a][4] < -2) {
+                   particles[a][4] = 0;
+                } else if(particles[a][4] > (windowHeight/2)+2) {
+                   particles[a][4] = windowHeight/2;   
+                }
             } else if(particles[a][3] < 0 || particles[a][3] > windowWidth/2) {
-               println("Y-Axis Collision" + (180 - particles[a][5]));
-               particles[a][5] = 180 - particles[a][5];
+                println("Y-Axis Collision" + (180 - particles[a][5]));
+                particles[a][5] = 180 - particles[a][5];
             }
             
             if(particles[a][0] === 'solid') {
