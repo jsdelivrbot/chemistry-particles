@@ -28,24 +28,29 @@ var sketchProc=function(processingInstance){ with (processingInstance){
         for(var a = 0; a < particles.length; a++) {
             //y-axis collision test.
             if(particles[a][4] < 0 || particles[a][4] > windowHeight/2) {
+                //println("Y-Axis Collision " + (180 - particles[a][5]));
                 particles[a][5] *= -1;
                 
                 //if the particle is stuck in the wall
                 if(particles[a][4] < -2) {
-                   particles[a][4] = 0;
+                    particles[a][4] = 0;
+                    println("Y-Axis Bug");
                 } else if(particles[a][4] > (windowHeight/2)+2) {
-                   particles[a][4] = windowHeight/2;   
+                    particles[a][4] = windowHeight/2;   
+                    println("Y-Axis Bug");
                 }
             //x-axis collision test
             } else if(particles[a][3] < 0 || particles[a][3] > windowWidth/2) {
-                println("Y-Axis Collision " + (180 - particles[a][5]));
+                //println("X-Axis Collision " + (180 - particles[a][5]));
                 particles[a][5] = 180 - particles[a][5];
                 
                 //if the particle is stuck in the wall
                 if(particles[a][3] < -2) {
-                   particles[a][3] = 0;
+                    particles[a][3] = 0;
+                    println("X-Axis Bug");
                 } else if(particles[a][3] > (windowWidth/2)+2) {
-                   particles[a][3] = windowWidth/2;   
+                    particles[a][3] = windowWidth/2;  
+                    println("X-Axis Bug");
                 }
             }
             
@@ -64,7 +69,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
             } else if(particles[a][0] === 'gas') {
                 //if gas particles collide. Larger range then liquid.
                 for(var b = 0; b < particles.length; b++) {
-                    if(a !== b && particles[a][3] > particles[b][3]-20 && particles[a][3] < particles[b][3]+20 && particles[a][4] > particles[b][4]-20 && particles[a][4] < particles[b][4]+20) {
+                    if(a !== b && particles[a][3] > particles[b][3]-30 && particles[a][3] < particles[b][3]+30 && particles[a][4] > particles[b][4]-30 && particles[a][4] < particles[b][4]+30) {
                         particles[a][5] *= -1;
                         particles[b][5] *= -1;
                     }
