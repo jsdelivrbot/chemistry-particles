@@ -52,7 +52,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
             if(particles[a][0] === 'solid') {
                 //particles[a][3] += particles[a][1] * cos(radians(particles[a][5]));
                 //particles[a][4] += particles[a][1] * sin(radians(particles[a][5]));
-            } else if(state === 'liquid') {
+            } else if(particles[a][4] === 'liquid') {
                 //if liquid particles collide.
                 for(var b = 0; b < particles.length; b++) {
                     if(a !== b && particles[a][3] > particles[b][3]-5 && particles[a][3] < particles[b][3]+5 && particles[a][4] > particles[b][4]-5 && particles[a][4] < particles[b][4]+5) {
@@ -61,7 +61,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
                     }
                 }
                 
-            } else if(state === 'gas') {
+            } else if(particles[a][4] === 'gas') {
                 //if gas particles collide. Larger range then liquid.
                 for(var b = 0; b < particles.length; b++) {
                     if(a !== b && particles[a][3] > particles[b][3]-20 && particles[a][3] < particles[b][3]+20 && particles[a][4] > particles[b][4]-20 && particles[a][4] < particles[b][4]+20) {
