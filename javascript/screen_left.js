@@ -1,6 +1,6 @@
 var sketchProc_left=function(processingInstance){ with (processingInstance){
     setup = function() {
-        size(innerWidth/4-5, innerHeight/2);
+        size(windowWidth/4-5, windowHeight/2);
         background(227, 220, 209);
         strokeWeight(3);
     };
@@ -12,7 +12,7 @@ var sketchProc_left=function(processingInstance){ with (processingInstance){
     draw = function() {
         background(227, 220, 209);
         //line centered in canvas. -25 to 125
-        line(((innerWidth/4)/2)-75, 30, ((innerWidth/4)/2)+75, 30);
+        line(((windowWidth/4)/2)-75, 30, ((windowHeight/4)/2)+75, 30);
     };
 
 }};
