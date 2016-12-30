@@ -5,7 +5,7 @@ var sketchProc_left=function(processingInstance){ with (processingInstance){
         strokeWeight(3);
     };
     //define the x location of drag bar.
-    var barX = heat_source_temperature;
+    var barX = windowWidth/4*0.5;
     var changeSourceTemperature = function() {
         heat_source_temperature = barX;
     }
@@ -18,9 +18,10 @@ var sketchProc_left=function(processingInstance){ with (processingInstance){
         ellipse(barX, 30, 10, 10);
     };
     
-    mousePressed = function() {
+    mouseDragged = function() {
         if(mouseX >= (windowWidth/4)*0.25 && mouseX <= (windowWidth/4)*0.75) {
             barX = mouseX;
+            changeSourceTemperature();
         }
     };
     
