@@ -12,7 +12,7 @@ var sketchProc_left=function(processingInstance){ with (processingInstance){
     draw = function() {
         background(227, 220, 209);
         //line centered in canvas. -25 to 125
-        line(((windowWidth/4)/2)-75, 30, ((windowHeight/4)/2)+75, 30);
+        line(((windowWidth/4)*0.25, 30, ((windowHeight/4)*0.75);
     };
 
 }};
