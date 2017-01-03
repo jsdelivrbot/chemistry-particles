@@ -1,7 +1,7 @@
 var sketchProc_left=function(processingInstance){ with (processingInstance){
     setup = function() {
         size(windowWidth/4-5, windowHeight/2);
-        background(227, 220, 209);
+        background(0, 0, 100);
         strokeWeight(3);
         textAlign(CENTER, TOP);
     };
