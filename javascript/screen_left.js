@@ -11,7 +11,7 @@ var sketchProc_left=function(processingInstance){ with (processingInstance){
         heat_source_temperature = barX;
     }
     
-    var screenLeftUpdate() {
+    var screenLeftUpdate = function() {
         background(227, 220, 209);
         //line centered in canvas. -25 to 125
         text("Heat Source Temperature (°C)", (windowWidth/4)*0.5, 15);
