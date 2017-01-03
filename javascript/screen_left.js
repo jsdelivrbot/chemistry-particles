@@ -18,7 +18,7 @@ var sketchProc_left=function(processingInstance){ with (processingInstance){
         line((windowWidth/4)*0.25, 30, (windowWidth/4)*0.75, 30);
         fill(0, 0, 0);
         ellipse(barX, 30, 10, 10);
-    }
+    };
     
     draw = function() {
         
