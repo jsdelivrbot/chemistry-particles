@@ -14,9 +14,9 @@ var sketchProc_left=function(processingInstance){ with (processingInstance){
     var screenLeftUpdate = function() {
         background(227, 220, 209);
         //line centered in canvas. -25 to 125
+        fill(0, 0, 0);
         text("Heat Source Temperature (°C)", (windowWidth/4)*0.5, 10);
         line((windowWidth/4)*0.25, 30, (windowWidth/4)*0.75, 30);
-        fill(0, 0, 0);
         ellipse(barX, 30, 10, 10);
     };
     screenLeftUpdate();
