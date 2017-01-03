@@ -1,7 +1,6 @@
 var sketchProc_left=function(processingInstance){ with (processingInstance){
     setup = function() {
         size(windowWidth/4-5, windowHeight/2);
-        background(227, 220, 209);        
         strokeWeight(3);
         textAlign(CENTER, TOP);
     };
@@ -18,7 +17,6 @@ var sketchProc_left=function(processingInstance){ with (processingInstance){
         text("Heat Source Temperature (°C)", (windowWidth/4)*0.5, 10);
         line((windowWidth/4)*0.25, 30, (windowWidth/4)*0.75, 30);
         ellipse(barX, 30, 10, 10);
-        println("It runs");
     };
     screenLeftUpdate();
     
