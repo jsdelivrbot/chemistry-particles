@@ -19,6 +19,7 @@ var sketchProc_left=function(processingInstance){ with (processingInstance){
         ellipse(barX, 30, 10, 10);
         //screenLeftUpdate();
     };
+    screenLeftUpdate();
     
     mouseDragged = function() {
         if(mouseX >= (windowWidth/4)*0.25 && mouseX <= (windowWidth/4)*0.75 && mouseY > 20 && mouseY < 40) {
