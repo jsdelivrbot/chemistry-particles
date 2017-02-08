@@ -62,14 +62,7 @@ var sketchProc=function(processingInstance){ with (processingInstance){
                 for(var b = 0; b < particles.length; b++) {
                     if(a !== b && particles[a][3] > particles[b][3]-5 && particles[a][3] < particles[b][3]+5 && particles[a][4] > particles[b][4]-5 && particles[a][4] < particles[b][4]+5) {
                         particles[a][5] *= -1;
-                        particles[b][5] *= -1;
-                        
-                        for(var distance_a = -5; a <= 5; a++) {
-                            if(particles[a][3]+distance_a+5 > particles[b][3]+distance_a && particles[a][3]+distance_a-5 < particles[b][3]+distance_a && particles[a][4]+distance_a+5 > particles[b][4]+distance_a && particles[a][4]+distance_a-5 < particles[b][4]+distance_a) {
-                                println("Future Hit Predicted");
-                            }
-                        }
-                        
+                        particles[b][5] *= -1;                        
                     }
                 }
                 
@@ -80,8 +73,6 @@ var sketchProc=function(processingInstance){ with (processingInstance){
                         //var temp = cos();
                         particles[a][5] *= -1;
                         particles[b][5] *= -1;
-                        
-                        
                     }
                 }
             }
